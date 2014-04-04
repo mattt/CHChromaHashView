@@ -21,6 +21,6 @@
 // THE SOFTWARE.
 
 #ifndef _CHROMA_HASH_
-#define _CHROMA_HASH
+#define _CHROMA_HASH_
 #import "CHChromaHashView.h"
 #endif
