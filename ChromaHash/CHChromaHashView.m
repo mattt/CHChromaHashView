@@ -38,7 +38,7 @@ NSArray * CHColorsFromDigestOfString(NSString *string) {
 
     NSMutableArray *mutableArray = [NSMutableArray array];
     NSUInteger offset = 0;
-    while (offset + 3 < CC_SHA1_DIGEST_LENGTH) {
+    while (offset + 3 < CC_MD5_DIGEST_LENGTH) {
         unsigned char r = output[offset++];
         unsigned char g = output[offset++];
         unsigned char b = output[offset++];
