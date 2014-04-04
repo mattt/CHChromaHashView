@@ -24,6 +24,10 @@
 
 #import <CommonCrypto/CommonCrypto.h>
 
+#ifndef _CHROMA_HASH_SALT_
+#define _CHROMA_HASH_SALT_ (__DATE__ " " __TIME__)
+#endif
+
 static NSUInteger const CHDefaultNumberOfValues = 3;
 static NSUInteger const CHMinimumCharacterThreshold = 6;
 
@@ -33,7 +37,7 @@ static NSArray * CHColorsFromDigestOfString(NSString *string) {
     }
 
     uint8_t output[CC_SHA1_DIGEST_LENGTH];
-    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [[string stringByAppendingString:[NSString stringWithCString:(_CHROMA_HASH_SALT_) encoding:NSASCIIStringEncoding]] dataUsingEncoding:NSUTF8StringEncoding];
     CC_SHA1(data.bytes, data.length, output);
 
     NSMutableArray *mutableArray = [NSMutableArray array];
