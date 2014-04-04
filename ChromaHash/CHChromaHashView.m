@@ -32,9 +32,9 @@ NSArray * CHColorsFromDigestOfString(NSString *string) {
         return @[];
     }
 
-    uint8_t output[CC_MD5_DIGEST_LENGTH];
+    uint8_t output[CC_SHA1_DIGEST_LENGTH];
     NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
-    CC_MD5(data.bytes, data.length, output);
+    CC_SHA1(data.bytes, data.length, output);
 
     NSMutableArray *mutableArray = [NSMutableArray array];
     NSUInteger offset = 0;
