@@ -27,7 +27,7 @@
 static NSUInteger const CHDefaultNumberOfValues = 3;
 static NSUInteger const CHMinimumCharacterThreshold = 6;
 
-NSArray * CHColorsFromDigestOfString(NSString *string) {
+static NSArray * CHColorsFromDigestOfString(NSString *string) {
     if (!string || [string isEqualToString:@""]) {
         return @[];
     }
