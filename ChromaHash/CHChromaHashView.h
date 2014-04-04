@@ -22,12 +22,14 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSArray * CHColorsFromDigestOfString(NSString *string);
-
 @interface CHChromaHashView : UIView <UITextFieldDelegate>
 
 @property (nonatomic, assign) NSUInteger numberOfValues;
 
+@property (nonatomic, assign) NSTimeInterval animationDuration;
+
 @property (nonatomic, strong) IBOutlet UIControl <UITextInput> *textInput;
 
 @end
+
+extern NSArray * CHColorsFromDigestOfString(NSString *string);

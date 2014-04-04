@@ -126,7 +126,7 @@ NSArray * CHColorsFromDigestOfString(NSString *string) {
         [mutableColors addObjectsFromArray:@[(id)[color CGColor], (id)[color CGColor]]];
     }
 
-    NSTimeInterval duration = 0.3f;
+    NSTimeInterval duration = self.animationDuration;
     [UIView animateWithDuration:duration animations:^{
         [CATransaction begin];
         {
