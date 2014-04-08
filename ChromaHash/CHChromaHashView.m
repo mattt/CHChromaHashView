@@ -47,7 +47,7 @@ static NSArray * CHColorsFromDigestOfString(NSString *string) {
         unsigned char g = output[offset++];
         unsigned char b = output[offset++];
 
-        UIColor *color = nil;
+        UIColor *color;
         if ([string length] < CHMinimumCharacterThreshold) {
             color = [UIColor colorWithWhite:(r / 255.0f) alpha:1.0f];
         } else {
