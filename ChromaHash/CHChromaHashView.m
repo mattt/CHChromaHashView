@@ -36,17 +36,17 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
     return @[];
   }
 
-  uint8_t output[CC_SHA1_DIGEST_LENGTH];
+  uint8_t output[CC_SHA256_DIGEST_LENGTH];
   NSData *data = [[string
       stringByAppendingString:[NSString
                                   stringWithCString:(_CHROMA_HASH_SALT_)
                                            encoding:NSASCIIStringEncoding]]
       dataUsingEncoding:NSUTF8StringEncoding];
-  CC_SHA1(data.bytes, (CC_LONG)data.length, output);
+  CC_SHA256(data.bytes, (CC_LONG)data.length, output);
 
   NSMutableArray *mutableArray = [NSMutableArray array];
   NSUInteger offset = 0;
-  while (offset + 3 < CC_SHA1_DIGEST_LENGTH) {
+  while (offset + 3 < CC_SHA256_DIGEST_LENGTH) {
     unsigned char r = output[offset++];
     unsigned char g = output[offset++];
     unsigned char b = output[offset++];
