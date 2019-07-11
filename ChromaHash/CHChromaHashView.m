@@ -68,7 +68,7 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
 }
 
 @interface CHChromaHashView ()
-@property (readonly) CAGradientLayer *gradientLayer;
+@property(readonly) CAGradientLayer *gradientLayer;
 @end
 
 @implementation CHChromaHashView
@@ -78,7 +78,7 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
 }
 
 - (CAGradientLayer *)gradientLayer {
-    return (CAGradientLayer *)self.layer;
+  return (CAGradientLayer *)self.layer;
 }
 
 - (void)commonInit {
@@ -91,7 +91,7 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
 }
 
 - (void)awakeFromNib {
-    [super awakeFromNib];
+  [super awakeFromNib];
   [self commonInit];
 }
 
@@ -151,13 +151,14 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
         addObjectsFromArray:@[ (id)[color CGColor], (id)[color CGColor] ]];
   }
 
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"colors"];
-    animation.duration = self.animationDuration;
-    animation.removedOnCompletion = YES;
-    animation.fillMode = kCAFillModeForwards;
-    [self.gradientLayer addAnimation:animation forKey:nil];
+  CABasicAnimation *animation =
+      [CABasicAnimation animationWithKeyPath:@"colors"];
+  animation.duration = self.animationDuration;
+  animation.removedOnCompletion = YES;
+  animation.fillMode = kCAFillModeForwards;
+  [self.gradientLayer addAnimation:animation forKey:nil];
 
-    [self.gradientLayer setColors:mutableColors];
+  [self.gradientLayer setColors:mutableColors];
 }
 
 @end
