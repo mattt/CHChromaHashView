@@ -1,6 +1,6 @@
 // AppDelegate.h
 //
-// Copyright (c) 2014 Mattt Thompson
+// Copyright (c) 2014 Mattt (https://mat.tt/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,6 +24,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property(strong, nonatomic) UIWindow *window;
 
 @end

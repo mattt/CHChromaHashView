@@ -1,6 +1,6 @@
 // ViewController.m
 //
-// Copyright (c) 2014 Mattt Thompson
+// Copyright (c) 2014 Mattt (https://mat.tt/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,8 +23,8 @@
 #import "ViewController.h"
 
 @interface ViewController () <UIGestureRecognizerDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordConfirmationTextField;
+@property(weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property(weak, nonatomic) IBOutlet UITextField *passwordConfirmationTextField;
 @end
 
 @implementation ViewController
@@ -32,24 +32,25 @@
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
 
-    self.title = NSLocalizedString(@"Chroma-Hash", nil);
+  self.title = NSLocalizedString(@"Chroma-Hash", nil);
 }
 
 #pragma mark - IBAction
 
 - (IBAction)findOutMore:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/mattt/Chroma-Hash"]];
+  [[UIApplication sharedApplication]
+      openURL:[NSURL URLWithString:@"https://github.com/mattt/Chroma-Hash"]];
 }
 
 #pragma mark - UIGestureRecognizerDelegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    [self.passwordTextField resignFirstResponder];
-    [self.passwordConfirmationTextField resignFirstResponder];
+  [self.passwordTextField resignFirstResponder];
+  [self.passwordConfirmationTextField resignFirstResponder];
 
-    return YES;
+  return YES;
 }
 
 @end

@@ -1,6 +1,6 @@
 // AppDelegate.m
 //
-// Copyright (c) 2014 Mattt Thompson
+// Copyright (c) 2014 Mattt (https://mat.tt/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,18 +27,19 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application
-didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.window.backgroundColor = [UIColor whiteColor];
 
-    UIViewController *viewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    self.window.rootViewController = navigationController;
+  UIViewController *viewController =
+      [[ViewController alloc] initWithNibName:nil bundle:nil];
+  UINavigationController *navigationController = [[UINavigationController alloc]
+      initWithRootViewController:viewController];
+  self.window.rootViewController = navigationController;
 
-    [self.window makeKeyAndVisible];
+  [self.window makeKeyAndVisible];
 
-    return YES;
+  return YES;
 }
 
 @end

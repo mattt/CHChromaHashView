@@ -1,6 +1,6 @@
 // CHChromaHashView.h
 //
-// Copyright (c) 2014 Mattt Thompson
+// Copyright (c) 2014 Mattt (https://mat.tt/)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,23 +23,23 @@
 #import <Foundation/Foundation.h>
 
 /**
- 
+
  */
 @interface CHChromaHashView : UIView <UITextFieldDelegate>
 
 /**
- 
+
  */
-@property (nonatomic, assign) NSUInteger numberOfValues;
+@property(nonatomic, assign) NSUInteger numberOfValues;
 
 /**
- 
+
  */
-@property (nonatomic, assign) NSTimeInterval animationDuration;
+@property(nonatomic, assign) NSTimeInterval animationDuration;
 
 /**
- 
+
  */
-@property (nonatomic, strong) IBOutlet UIControl <UITextInput> *textInput;
+@property(nonatomic, strong) IBOutlet UIControl<UITextInput> *textInput;
 
 @end

@@ -152,7 +152,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Mattt Thompson";
+				ORGANIZATIONNAME = "Mattt";
 			};
 			buildConfigurationList = F89E1B8C18E1161F00C73D14 /* Build configuration list for PBXProject "iOS Example" */;
 			compatibilityVersion = "Xcode 3.2";
