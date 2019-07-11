@@ -14,9 +14,9 @@
 
 ### Contact
 
-[Mattt Thompson](http://github.com/mattt)
-[@mattt](https://twitter.com/mattt)
+[Mattt](https://twitter.com/mattt)
 
 ## License
 
-CHChromaHashView is available under the MIT license. See the LICENSE file for more info.
+CHChromaHashView is available under the MIT license.
+See the LICENSE file for more info.
