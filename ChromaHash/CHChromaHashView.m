@@ -42,7 +42,7 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
                                   stringWithCString:(_CHROMA_HASH_SALT_)
                                            encoding:NSASCIIStringEncoding]]
       dataUsingEncoding:NSUTF8StringEncoding];
-  CC_SHA1(data.bytes, data.length, output);
+  CC_SHA1(data.bytes, (CC_LONG)data.length, output);
 
   NSMutableArray *mutableArray = [NSMutableArray array];
   NSUInteger offset = 0;
