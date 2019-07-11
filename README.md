@@ -2,6 +2,10 @@
 
 **A classic password visualization concept, ported to iOS**
 
+> This project is no longer maintained.
+
+---
+
 ![CHChromaHashView](https://raw.github.com/mattt/CHChromaHashView/screenshots/chchromahashview.gif)
 
 > Chroma-Hash is a concept for visualizing secure text input using ambient color bars
