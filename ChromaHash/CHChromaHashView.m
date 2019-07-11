@@ -68,6 +68,7 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
 }
 
 @interface CHChromaHashView ()
+@property (readonly) CAGradientLayer *gradientLayer;
 @end
 
 @implementation CHChromaHashView
@@ -76,13 +77,17 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
   return [CAGradientLayer class];
 }
 
+- (CAGradientLayer *)gradientLayer {
+    return (CAGradientLayer *)self.layer;
+}
+
 - (void)commonInit {
   self.backgroundColor = [UIColor clearColor];
 
   self.numberOfValues = CHDefaultNumberOfValues;
 
-  [(CAGradientLayer *)self.layer setStartPoint:CGPointMake(0.0f, 0.0f)];
-  [(CAGradientLayer *)self.layer setEndPoint:CGPointMake(1.0f, 0.0f)];
+  [self.gradientLayer setStartPoint:CGPointMake(0.0f, 0.0f)];
+  [self.gradientLayer setEndPoint:CGPointMake(1.0f, 0.0f)];
 }
 
 - (void)awakeFromNib {
@@ -115,7 +120,7 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
   }
   [mutableLocations addObject:@(1.0f)];
 
-  [(CAGradientLayer *)self.layer setLocations:mutableLocations];
+  [self.gradientLayer setLocations:mutableLocations];
 }
 
 - (void)setTextInput:(UIControl<UITextInput> *)textInput {
@@ -146,33 +151,13 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
         addObjectsFromArray:@[ (id)[color CGColor], (id)[color CGColor] ]];
   }
 
-  NSTimeInterval duration = self.animationDuration;
-  [UIView animateWithDuration:duration
-                   animations:^{
-                     [CATransaction begin];
-                     {
-                       [CATransaction setAnimationDuration:duration];
-                       [CATransaction
-                           setAnimationTimingFunction:
-                               [CAMediaTimingFunction
-                                   functionWithName:
-                                       kCAMediaTimingFunctionEaseInEaseOut]];
-                       [(CAGradientLayer *)self.layer setColors:mutableColors];
-                     }
-                     [CATransaction commit];
-                   }];
-}
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"colors"];
+    animation.duration = self.animationDuration;
+    animation.removedOnCompletion = YES;
+    animation.fillMode = kCAFillModeForwards;
+    [self.gradientLayer addAnimation:animation forKey:nil];
 
-#pragma mark - CALayerDelegate
-
-- (id<CAAction>)actionForLayer:(CALayer *)layer forKey:(NSString *)event {
-  id<CAAction> action = [super actionForLayer:layer forKey:event];
-  if ((!action || [(id)action isEqual:[NSNull null]]) &&
-      [event isEqualToString:@"colors"]) {
-    action = [CABasicAnimation animationWithKeyPath:event];
-  }
-
-  return action;
+    [self.gradientLayer setColors:mutableColors];
 }
 
 @end
