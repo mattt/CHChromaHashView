@@ -86,6 +86,7 @@ static NSArray *CHColorsFromDigestOfString(NSString *string) {
 }
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
   [self commonInit];
 }
 
